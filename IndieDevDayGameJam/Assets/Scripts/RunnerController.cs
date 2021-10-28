@@ -60,13 +60,13 @@ public class RunnerController : MonoBehaviour
         { 
             if (Input.GetKey(KeyCode.LeftArrow) || leftButtonPressed == true)
             {
-                cylinder.transform.Rotate(new Vector3(0,0,-playerRotationVelocity));
-                //runnerPlayer.transform.localPosition -= new Vector3(0.01f, 0, 0);
+                //cylinder.transform.Rotate(new Vector3(0,0,-playerRotationVelocity));
+                runnerPlayer.transform.localPosition -= new Vector3(0.01f, 0, 0);
             }
             else if (Input.GetKey(KeyCode.RightArrow) || rightButtonPressed == true)
             {
-                cylinder.transform.Rotate(new Vector3(0, 0, playerRotationVelocity));
-                //runnerPlayer.transform.localPosition += new Vector3(0.01f, 0, 0);
+                //cylinder.transform.Rotate(new Vector3(0, 0, playerRotationVelocity));
+                runnerPlayer.transform.localPosition += new Vector3(0.01f, 0, 0);
             }
         }
     }

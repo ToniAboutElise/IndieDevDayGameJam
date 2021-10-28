@@ -555,7 +555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384335808}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
-  m_LocalPosition: {x: 0.09124347, y: -0.081989504, z: -3.4914331}
+  m_LocalPosition: {x: 0.09, y: -0.081989504, z: -0.49}
   m_LocalScale: {x: 0.5345368, y: 0.81100523, z: 0.47186783}
   m_Children:
   - {fileID: 123080996}
@@ -1120,8 +1120,10 @@ MonoBehaviour:
   - {fileID: 368624409}
   randomTransforms: 
   bonusTransforms: 
-  enemyPrefab: {fileID: 3898507328579417084, guid: 25e6f3e102a7c3d4aaacd4b1ff03ddaf,
-    type: 3}
+  enemyPrefab:
+  - {fileID: 3898507328579417084, guid: 25e6f3e102a7c3d4aaacd4b1ff03ddaf, type: 3}
+  - {fileID: 1781401100067250774, guid: a9f1475d8d6de2e48a9554dfdc458243, type: 3}
+  - {fileID: 1781401100067250774, guid: 41285688e65ebc64f905f599de3c4391, type: 3}
   bonusPrefab: {fileID: 4208720153833051275, guid: a5d8161c3ba202549a21b4d3cceeaf1c,
     type: 3}
   specialBonusPrefab: {fileID: 4208720153833051275, guid: 4519269cb0573704dbcee457607aeea9,
@@ -2232,8 +2234,7 @@ MonoBehaviour:
   - {fileID: 1659002560}
   randomTransforms: 
   bonusTransforms: 
-  enemyPrefab: {fileID: 3898507328579417084, guid: 25e6f3e102a7c3d4aaacd4b1ff03ddaf,
-    type: 3}
+  enemyPrefab: []
   bonusPrefab: {fileID: 4208720153833051275, guid: a5d8161c3ba202549a21b4d3cceeaf1c,
     type: 3}
   specialBonusPrefab: {fileID: 4208720153833051275, guid: 4519269cb0573704dbcee457607aeea9,

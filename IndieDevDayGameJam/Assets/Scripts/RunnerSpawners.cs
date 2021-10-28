@@ -8,7 +8,7 @@ public class RunnerSpawners : MonoBehaviour
     public Transform[] spawners;
     public List<int> randomTransforms;
     public List<int> bonusTransforms;
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefab;
     public GameObject bonusPrefab;
     public GameObject specialBonusPrefab;
     protected float enemiesVelocity;
@@ -127,7 +127,8 @@ public class RunnerSpawners : MonoBehaviour
         for (int i = 0; i < randomTransforms.Count; i++)
         {
             Transform targetTransform = spawners[randomTransforms[i]];
-            GameObject enemyInstance = Instantiate(enemyPrefab);
+            int randEnemy = Random.Range(0, enemyPrefab.Count);
+            GameObject enemyInstance = Instantiate(enemyPrefab[randEnemy]);
             enemyInstance.GetComponent<RunnerEntity>().enemiesVelocity = enemiesVelocity;
             enemyInstance.transform.parent = targetTransform;
             enemyInstance.transform.position = targetTransform.position;

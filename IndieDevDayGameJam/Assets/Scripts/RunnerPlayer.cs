@@ -8,6 +8,8 @@ public class RunnerPlayer : MonoBehaviour
     public BoxCollider boxCollider;
     public int lives = 3;
 
+    public AudioSource claxonAudioSource;
+
     public PlayerState playerState = PlayerState.Idle;
 
     public enum PlayerState
@@ -52,4 +54,18 @@ public class RunnerPlayer : MonoBehaviour
         playerState = PlayerState.Idle;
 
     }
+
+    protected void CheckPlayClaxon()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            claxonAudioSource.Play();
+        }
+    }
+
+    private void Update()
+    {
+        CheckPlayClaxon();
+    }
+
 }

@@ -6,9 +6,11 @@ public class RunnerSpawners : MonoBehaviour
 {
     private bool canSpawnEnemies = true;
     public Transform[] spawners;
+    public Transform[] decorationSpawners;
     public List<int> randomTransforms;
     public List<int> bonusTransforms;
     public List<GameObject> enemyPrefab;
+    public List<GameObject> decorationPrefab;
     public GameObject bonusPrefab;
     public GameObject specialBonusPrefab;
     protected float enemiesVelocity;
@@ -17,6 +19,8 @@ public class RunnerSpawners : MonoBehaviour
     public int rounds;
     public RunnerController runnerController;
     public int freeSpaces;
+
+    private bool canSpawnDecoration = true;
 
     public Level level = Level.Easy;
 
@@ -107,7 +111,7 @@ public class RunnerSpawners : MonoBehaviour
 
     protected void SpawnEnemiesAndBonus()
     {
-        if(canSpawnEnemies == true)
+        if (canSpawnEnemies == true)
         {
             StartCoroutine(SpawnWithCooldown());
         }
@@ -160,8 +164,31 @@ public class RunnerSpawners : MonoBehaviour
         canSpawnEnemies = true;
     }
 
+    protected IEnumerator SpawnLimitDecoration()
+    {
+        canSpawnDecoration = false;
+        for (int i = 0; i < decorationSpawners.Length; i++)
+        {
+            Transform targetTransform = decorationSpawners[i];
+            int rand = Random.Range(0, decorationPrefab.Count);
+            GameObject decorationInstance = Instantiate(decorationPrefab[rand]);
+            decorationInstance.GetComponent<RunnerEntity>().enemiesVelocity = enemiesVelocity;
+            decorationInstance.transform.parent = targetTransform;
+            decorationInstance.transform.position = targetTransform.position;
+            decorationInstance.transform.rotation = targetTransform.rotation;
+        }
+        yield return new WaitForSeconds(0.2f);
+        canSpawnDecoration = true;
+        //Check if player has lost;
+        StartCoroutine(SpawnLimitDecoration());
+    }
+
     protected void Update()
     {
         SpawnEnemiesAndBonus();
+        if (canSpawnDecoration == true)
+        {
+            StartCoroutine(SpawnLimitDecoration());
+        }
     }
 }

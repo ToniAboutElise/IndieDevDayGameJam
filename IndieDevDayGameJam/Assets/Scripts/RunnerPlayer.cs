@@ -29,7 +29,7 @@ public class RunnerPlayer : MonoBehaviour
             runnerBonus.enemiesVelocity = 0;
             Destroy(runnerBonus.GetComponent<Rigidbody>());
             runnerBonus.transform.SetParent(null);
-            runnerBonus.GetComponent<Animation>().Play("RunnerBonusGrab");
+            runnerBonus.bonusAnimation.Play("RunnerBonusGrab");
             controller.UpdateTimeLeft(other.GetComponent<RunnerBonus>().pointsValue);
             runnerBonus.BonusGrabbed();
         }

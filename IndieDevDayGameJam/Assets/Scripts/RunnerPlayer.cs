@@ -8,6 +8,8 @@ public class RunnerPlayer : MonoBehaviour
     public BoxCollider boxCollider;
     public int lives = 3;
 
+    public Rigidbody rb;
+
     public AudioSource claxonAudioSource;
 
     public PlayerState playerState = PlayerState.Idle;
@@ -28,7 +30,7 @@ public class RunnerPlayer : MonoBehaviour
             Destroy(runnerBonus.GetComponent<Rigidbody>());
             runnerBonus.transform.SetParent(null);
             runnerBonus.GetComponent<Animation>().Play("RunnerBonusGrab");
-            controller.UpdateCurrentPoints(other.GetComponent<RunnerBonus>().pointsValue);
+            controller.UpdateTimeLeft(other.GetComponent<RunnerBonus>().pointsValue);
             runnerBonus.BonusGrabbed();
         }
         else if (other.GetComponent<RunnerEntity>() && other.GetComponent<RunnerEntity>().entityType == RunnerEntity.EntityType.Enemy && playerState == PlayerState.Idle)
@@ -41,9 +43,8 @@ public class RunnerPlayer : MonoBehaviour
     protected IEnumerator HitByEnemy()
     {
         if(lives != 0)
-        { 
-            lives--;
-            controller.livesText.text = lives.ToString();            
+        {
+            controller.timeLeftBar.fillAmount -= 0.15f;
             yield return new WaitForSeconds(2);
         }
         else

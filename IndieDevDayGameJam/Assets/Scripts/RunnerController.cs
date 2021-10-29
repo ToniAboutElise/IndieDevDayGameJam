@@ -18,10 +18,13 @@ public class RunnerController : MonoBehaviour
     public float playerRotationVelocity = 2.5f;
     public float spawnCooldown = 1;
     public int spawnRate = 4;
-    public int currentPoints;
+    public int currentTime;
+    public Image timeLeftBar;
     public Text pointsText;
     public Text livesText;
     public TextureMapFakeVelocity textureMapFakeVelocity;
+
+    private bool canSubstractTime = true;
 
     private void Start()
     {
@@ -30,6 +33,7 @@ public class RunnerController : MonoBehaviour
         rushModeGameObject.SetActive(false);
         StartCoroutine(AddGameVelocity());
         livesText.text = runnerPlayer.lives.ToString();
+        timeLeftBar.fillAmount = 1;
     }
 
     protected IEnumerator AddGameVelocity()
@@ -61,20 +65,33 @@ public class RunnerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow) || leftButtonPressed == true)
             {
                 //cylinder.transform.Rotate(new Vector3(0,0,-playerRotationVelocity));
-                runnerPlayer.transform.localPosition -= new Vector3(0.005f, 0, 0);
+                //runnerPlayer.transform.localPosition -= new Vector3(0.005f, 0, 0);
+                runnerPlayer.rb.AddForce(new Vector3(-1.7f, 0, 0), ForceMode.Force);
             }
             else if (Input.GetKey(KeyCode.RightArrow) || rightButtonPressed == true)
             {
                 //cylinder.transform.Rotate(new Vector3(0, 0, playerRotationVelocity));
-                runnerPlayer.transform.localPosition += new Vector3(0.005f, 0, 0);
+                //runnerPlayer.transform.localPosition += new Vector3(0.005f, 0, 0);
+                runnerPlayer.rb.AddForce(new Vector3(1.7f, 0, 0), ForceMode.Force);
             }
         }
     }
 
-    public void UpdateCurrentPoints(int pointsToAdd)
+    public void UpdateTimeLeft(int pointsToAdd)
     {
-        currentPoints += pointsToAdd;
-        pointsText.text = currentPoints.ToString();
+        timeLeftBar.fillAmount += pointsToAdd*0.1f;
+    }
+
+    protected IEnumerator TimeSubstraction()
+    {
+        canSubstractTime = false;
+        yield return new WaitForSeconds(0.005f);
+        timeLeftBar.fillAmount -= 0.001f;
+        if (timeLeftBar.fillAmount == 0)
+        {
+            GameOver();
+        }
+        canSubstractTime = true;
     }
 
     public void TouchLeftPress()
@@ -103,9 +120,12 @@ public class RunnerController : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Rotation();
+
+        if(canSubstractTime == true)
+        StartCoroutine(TimeSubstraction());
     }
 }
 

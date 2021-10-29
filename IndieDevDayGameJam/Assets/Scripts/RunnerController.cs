@@ -79,7 +79,7 @@ public class RunnerController : MonoBehaviour
 
     public void UpdateTimeLeft(int pointsToAdd)
     {
-        timeLeftBar.fillAmount += pointsToAdd*0.1f;
+        timeLeftBar.fillAmount += 0.1f;
     }
 
     protected IEnumerator TimeSubstraction()

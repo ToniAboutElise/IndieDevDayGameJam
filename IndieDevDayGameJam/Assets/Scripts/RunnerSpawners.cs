@@ -7,10 +7,12 @@ public class RunnerSpawners : MonoBehaviour
     private bool canSpawnEnemies = true;
     public Transform[] spawners;
     public Transform[] decorationSpawners;
+    public Transform[] cloudSpawners;
     public List<int> randomTransforms;
     public List<int> bonusTransforms;
     public List<GameObject> enemyPrefab;
     public List<GameObject> decorationPrefab;
+    public List<GameObject> cloudPrefab;
     public GameObject bonusPrefab;
     public GameObject specialBonusPrefab;
     protected float enemiesVelocity;
@@ -21,6 +23,7 @@ public class RunnerSpawners : MonoBehaviour
     public int freeSpaces;
 
     private bool canSpawnDecoration = true;
+    private bool canSpawnClouds = true;
 
     public Level level = Level.Easy;
 
@@ -177,18 +180,40 @@ public class RunnerSpawners : MonoBehaviour
             decorationInstance.transform.position = targetTransform.position;
             decorationInstance.transform.rotation = targetTransform.rotation;
         }
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         canSpawnDecoration = true;
-        //Check if player has lost;
-        StartCoroutine(SpawnLimitDecoration());
+    }
+
+    protected IEnumerator SpawnClouds()
+    {
+        canSpawnClouds = false;
+        int randCloudAmount = Random.Range(0, cloudSpawners.Length);
+        for (int i = 0; i < randCloudAmount; i++)
+        {
+            Transform targetTransform = cloudSpawners[i];
+            int rand = Random.Range(0, cloudPrefab.Count);
+            GameObject cloudInstance = Instantiate(cloudPrefab[rand]);
+            cloudInstance.GetComponent<RunnerEntity>().enemiesVelocity = enemiesVelocity;
+            cloudInstance.transform.parent = targetTransform;
+            cloudInstance.transform.position = targetTransform.position;
+            cloudInstance.transform.rotation = targetTransform.rotation;
+        }
+        yield return new WaitForSeconds(randCloudAmount);
+        canSpawnClouds = true;
     }
 
     protected void Update()
     {
         SpawnEnemiesAndBonus();
+
         if (canSpawnDecoration == true)
         {
             StartCoroutine(SpawnLimitDecoration());
+        }
+
+        if (canSpawnClouds == true)
+        {
+            StartCoroutine(SpawnClouds());
         }
     }
 }

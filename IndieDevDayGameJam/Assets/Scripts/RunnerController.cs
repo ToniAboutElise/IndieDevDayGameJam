@@ -60,7 +60,9 @@ public class RunnerController : MonoBehaviour
 
     protected void Rotation()
     {
-        if(isRotating == false)
+
+
+        if(Input.GetAxis("Horizontal") == 0)
         { 
             if (Input.GetKey(KeyCode.LeftArrow) || leftButtonPressed == true)
             {
@@ -74,6 +76,10 @@ public class RunnerController : MonoBehaviour
                 //runnerPlayer.transform.localPosition += new Vector3(0.005f, 0, 0);
                 runnerPlayer.rb.AddForce(new Vector3(1.7f, 0, 0), ForceMode.Force);
             }
+        }
+        else
+        {
+            runnerPlayer.rb.AddForce(new Vector3(Input.GetAxis("Horizontal") * 1.7f, 0, 0), ForceMode.Force);
         }
     }
 

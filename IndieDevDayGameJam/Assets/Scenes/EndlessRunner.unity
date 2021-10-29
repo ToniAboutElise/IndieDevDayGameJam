@@ -1959,6 +1959,7 @@ MonoBehaviour:
   - {fileID: 3898507328579417084, guid: 25e6f3e102a7c3d4aaacd4b1ff03ddaf, type: 3}
   - {fileID: 1781401100067250774, guid: a9f1475d8d6de2e48a9554dfdc458243, type: 3}
   - {fileID: 1781401100067250774, guid: 41285688e65ebc64f905f599de3c4391, type: 3}
+  - {fileID: 3898507328579417084, guid: 7fcd8b1effd329349bedd1674385b59a, type: 3}
   decorationPrefab:
   - {fileID: 8124677197774259429, guid: 8b576c70f241b0b4aba5741da6ad5b7a, type: 3}
   - {fileID: 8124677197774259429, guid: bd3662728bc77ac4c971243359160c6c, type: 3}

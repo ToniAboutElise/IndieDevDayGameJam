@@ -58,7 +58,7 @@ public class RunnerPlayer : MonoBehaviour
 
     protected void CheckPlayClaxon()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 3"))
         {
             claxonAudioSource.Play();
         }

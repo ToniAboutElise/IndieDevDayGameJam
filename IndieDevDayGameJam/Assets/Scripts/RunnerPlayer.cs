@@ -44,7 +44,7 @@ public class RunnerPlayer : MonoBehaviour
     {
         if(lives != 0)
         {
-            controller.timeLeftBar.fillAmount -= 0.15f;
+            controller.timeLeftBar.fillAmount -= 0.1f;
             yield return new WaitForSeconds(2);
         }
         else

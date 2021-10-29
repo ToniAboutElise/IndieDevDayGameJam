@@ -91,7 +91,7 @@ public class RunnerController : MonoBehaviour
     protected IEnumerator TimeSubstraction()
     {
         canSubstractTime = false;
-        yield return new WaitForSeconds(0.005f);
+        yield return new WaitForSeconds(0.0001f);
         timeLeftBar.fillAmount -= 0.001f;
         if (timeLeftBar.fillAmount == 0)
         {

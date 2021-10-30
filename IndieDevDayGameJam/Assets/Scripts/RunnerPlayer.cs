@@ -14,6 +14,7 @@ public class RunnerPlayer : MonoBehaviour
     public Animator hitAnimator;
 
     public AudioSource claxonAudioSource;
+    public AudioSource hitAudioSource;
 
     public PlayerState playerState = PlayerState.Idle;
 
@@ -69,6 +70,7 @@ public class RunnerPlayer : MonoBehaviour
 
     protected IEnumerator HitByEnemy()
     {
+        hitAudioSource.Play();
         hitAnimator.SetTrigger("Hit");
         yield return null;
         hitAnimator.ResetTrigger("Hit");

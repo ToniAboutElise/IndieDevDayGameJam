@@ -2393,7 +2393,7 @@ MonoBehaviour:
   normal: 0.0001
   fast: 0.0005
   superfast: 0.001
-  nextScene: EndlessRunner
+  nextScene: MainMenu
 --- !u!4 &1719079318
 Transform:
   m_ObjectHideFlags: 0

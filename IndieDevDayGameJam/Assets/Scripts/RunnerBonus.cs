@@ -8,8 +8,11 @@ public class RunnerBonus : RunnerEntity
 
     public Animation bonusAnimation;
 
+    public AudioSource pickUpAudioSource;
+
     public virtual void BonusGrabbed()
     {
+        pickUpAudioSource.Play();
         StartCoroutine(Destroy());
     }
 

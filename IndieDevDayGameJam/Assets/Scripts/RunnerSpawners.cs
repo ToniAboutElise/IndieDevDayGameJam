@@ -56,35 +56,35 @@ public class RunnerSpawners : MonoBehaviour
             break;
         case Level.Normal:
             DifficultyLevel normal = new DifficultyLevel();
-            normal.enemiesVelocity = 3.7f;
+            normal.enemiesVelocity = 3.8f;
             enemiesVelocity = normal.enemiesVelocity;
             runnerController.playerRotationVelocity = normal.playerRotationVelocity;
             normal.freeSpaces = 7;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             freeSpaces = normal.freeSpaces;
-            runnerController.spawnCooldown = 1.5f;
+            runnerController.spawnCooldown = 1.2f;
             break;
         case Level.Hard:
             DifficultyLevel hard = new DifficultyLevel();
-            hard.enemiesVelocity = 3;
+            hard.enemiesVelocity = 4.5f;
             enemiesVelocity = hard.enemiesVelocity;
             hard.playerRotationVelocity = 0.5f;
             runnerController.playerRotationVelocity = hard.playerRotationVelocity;
             hard.freeSpaces = 7;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             freeSpaces = hard.freeSpaces;
-            runnerController.spawnCooldown = 1.5f;
+            runnerController.spawnCooldown = 1f;
             break;
         case Level.Nightmare:
             DifficultyLevel nightmare = new DifficultyLevel();
-            nightmare.enemiesVelocity = 3;
+            nightmare.enemiesVelocity = 5.5f;
             enemiesVelocity = nightmare.enemiesVelocity;
             nightmare.playerRotationVelocity = 0.5f;
             runnerController.playerRotationVelocity = nightmare.playerRotationVelocity;
             nightmare.freeSpaces = 7;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             freeSpaces = nightmare.freeSpaces;
-            runnerController.spawnCooldown = 1.5f;
+            runnerController.spawnCooldown = 0.5f;
             break;
         }
     }

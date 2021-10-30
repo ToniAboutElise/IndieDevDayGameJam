@@ -91,7 +91,7 @@ public class RunnerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
-    protected void Rotation()
+    protected void PlayerControl()
     {
         if(Input.GetAxis("Horizontal") == 0)
         { 
@@ -155,7 +155,7 @@ public class RunnerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rotation();
+        PlayerControl();
 
         if(canSubstractTime == true)
         StartCoroutine(TimeSubstraction());

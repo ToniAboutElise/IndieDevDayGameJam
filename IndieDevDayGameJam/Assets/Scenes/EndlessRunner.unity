@@ -2349,6 +2349,13 @@ MonoBehaviour:
   - {fileID: 406866832}
   - {fileID: 1348670499}
   currentTrail: 0
+  unfillingTime: 0.001
+  superslow: 0.00001
+  slow: 0.00005
+  normal: 0.0001
+  fast: 0.0005
+  superfast: 0.001
+  nextScene: EndlessRunner
 --- !u!4 &1719079318
 Transform:
   m_ObjectHideFlags: 0
@@ -3003,6 +3010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830953909846759995, guid: c9670744cde69174fac4c65f0389a2ca,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9670744cde69174fac4c65f0389a2ca, type: 3}

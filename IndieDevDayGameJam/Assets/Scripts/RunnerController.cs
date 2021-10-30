@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class RunnerController : MonoBehaviour
 {
     public RunnerPlayer runnerPlayer;
+    public RunnerSpawners spawners;
     public bool leftButtonPressed = false;
     public bool rightButtonPressed = false;
     public bool isRotating = false;
@@ -63,7 +64,9 @@ public class RunnerController : MonoBehaviour
 
     protected void Win()
     {
-
+        spawners.enabled = false;
+        runnerPlayer.canControlPlayer = false;
+        runnerPlayer.rb.AddForce(Vector3.forward * 4 * Time.deltaTime, ForceMode.Impulse);
     }
 
     protected IEnumerator AddGameVelocity()
@@ -90,20 +93,14 @@ public class RunnerController : MonoBehaviour
 
     protected void Rotation()
     {
-
-
         if(Input.GetAxis("Horizontal") == 0)
         { 
             if (Input.GetKey(KeyCode.LeftArrow) || leftButtonPressed == true)
             {
-                //cylinder.transform.Rotate(new Vector3(0,0,-playerRotationVelocity));
-                //runnerPlayer.transform.localPosition -= new Vector3(0.005f, 0, 0);
                 runnerPlayer.rb.AddForce(new Vector3(-1.7f, 0, 0), ForceMode.Force);
             }
             else if (Input.GetKey(KeyCode.RightArrow) || rightButtonPressed == true)
             {
-                //cylinder.transform.Rotate(new Vector3(0, 0, playerRotationVelocity));
-                //runnerPlayer.transform.localPosition += new Vector3(0.005f, 0, 0);
                 runnerPlayer.rb.AddForce(new Vector3(1.7f, 0, 0), ForceMode.Force);
             }
         }

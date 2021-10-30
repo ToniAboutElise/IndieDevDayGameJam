@@ -69,7 +69,7 @@ public class RunnerController : MonoBehaviour
     protected IEnumerator AddGameVelocity()
     {
         yield return new WaitForSeconds(20);
-        playerRotationVelocity += 0.1f;
+
         if(spawnCooldown > 0.6f)
         { 
             spawnCooldown -= 0.1f;

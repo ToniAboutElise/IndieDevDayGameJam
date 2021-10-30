@@ -46,6 +46,11 @@ public class RunnerSpawners : MonoBehaviour
 
     public void SetDifficultyLevel(Level level)
     {
+        //superslow = 0.0009f;
+        //slow = 0.0007f;
+        //normal = 0.001f;
+        //fast = 0.002f;
+
         switch (level)
         {
         case Level.Easy:
@@ -55,7 +60,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.5f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = runnerController.normal;
+            runnerController.unfillingTime = 0.0007f;
             break;
         case Level.Normal:
             DifficultyLevel normal = new DifficultyLevel();
@@ -64,7 +69,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.2f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = runnerController.normal;
+            runnerController.unfillingTime = 0.0005f;
             break;
         case Level.Hard:
             DifficultyLevel hard = new DifficultyLevel();
@@ -73,7 +78,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = runnerController.normal;
+            runnerController.unfillingTime = 0.0003f;
             break;
         case Level.Nightmare:
             DifficultyLevel nightmare = new DifficultyLevel();
@@ -82,7 +87,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 0.5f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = runnerController.normal;
+            runnerController.unfillingTime = 0.0001f;
             break;
         case Level.FindGapEasy:
             DifficultyLevel findGapEasy = new DifficultyLevel();
@@ -91,7 +96,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.5f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = runnerController.slow;
+            runnerController.unfillingTime = 0.005f;
             break;
         case Level.FindGapNormal:
             DifficultyLevel findGapNormal = new DifficultyLevel();
@@ -100,7 +105,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.4f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = runnerController.slow;
+            runnerController.unfillingTime = 0.004f;
             break;
         case Level.FindGapHard:
             DifficultyLevel findGapHard = new DifficultyLevel();
@@ -109,7 +114,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.5f;
             runnerController.spawnRate = 5;
-            runnerController.unfillingTime = runnerController.normal;
+            runnerController.unfillingTime = 0.003f;
             break;
         case Level.FindGapNightmare:
             DifficultyLevel findGapNightmare = new DifficultyLevel();
@@ -118,7 +123,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.3f;
             runnerController.spawnRate = 6;
-            runnerController.unfillingTime = runnerController.fast;
+            runnerController.unfillingTime = 0.002f;
             break;
         }
     }
@@ -217,16 +222,18 @@ public class RunnerSpawners : MonoBehaviour
             { 
                 bonusInstance = Instantiate(bonusPrefab);
                 regularbonusSpawned = true;
-            }
+                bonusInstance.GetComponent<RunnerEntity>().enemiesVelocity = enemiesVelocity;
+                bonusInstance.transform.parent = targetTransform;
+                bonusInstance.transform.position = targetTransform.position;
+                bonusInstance.transform.rotation = targetTransform.rotation;
+            }/*
             else
             {
                 bonusInstance = Instantiate(specialBonusPrefab);
                 regularbonusSpawned = false;
             }
-            bonusInstance.GetComponent<RunnerEntity>().enemiesVelocity = enemiesVelocity;
-            bonusInstance.transform.parent = targetTransform;
-            bonusInstance.transform.position = targetTransform.position;
-            bonusInstance.transform.rotation = targetTransform.rotation;
+            */
+            
         }
 
         yield return new WaitForSeconds(runnerController.spawnCooldown);

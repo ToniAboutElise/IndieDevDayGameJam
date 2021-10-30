@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Text;
 
 public class MainMenu : MonoBehaviour
 {
@@ -27,23 +28,30 @@ public class MainMenu : MonoBehaviour
 
     private void CheckUnlockedLevels()
     {
-        Debug.Log(savedFile);
         if (!File.Exists(savedFile))
-        {
-            File.Create(savedFile);
+        { 
+            using (FileStream fs = File.Create(savedFile))
+            {
+                byte[] info = new UTF8Encoding(true).GetBytes("0");
+                // Add some information to the file.
+                fs.Write(info, 0, info.Length);
+            }
         }
 
-        StreamReader sr = new StreamReader(savedFile);
-
-        string content = sr.ReadLine();
-        int completedLevels = System.Int32.Parse(content);
-
-        for(int i = 0; i < completedLevels; i++)
+        using (StreamReader sr = File.OpenText(savedFile))
         {
-            levelList[i].gameObject.SetActive(true);
+            string content = sr.ReadLine();
+            Debug.Log("AAA " + content);
+            //string content = sr.ReadLine();
+            
+            int completedLevels = System.Int32.Parse(content);
+            Debug.Log(completedLevels);
+            for (int i = 0; i < completedLevels+1; i++)
+            {
+                levelList[i].gameObject.SetActive(true);
+            }
+            sr.Close();
         }
-
-        sr.Close();
     }
 
     public void ExitGame()

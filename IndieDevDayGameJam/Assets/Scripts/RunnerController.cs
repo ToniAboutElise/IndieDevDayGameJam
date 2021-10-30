@@ -34,12 +34,6 @@ public class RunnerController : MonoBehaviour
 
     public float unfillingTime = 0.001f;
 
-    public float superslow = 0.00001f;
-    public float slow = 0.00005f;
-    public float normal = 0.0001f;
-    public float fast = 0.0005f;
-    public float superfast = 0.001f;
-
     public string nextScene;
 
     private void Start()
@@ -56,7 +50,7 @@ public class RunnerController : MonoBehaviour
     {
         canAdvanceInTrail = false;
         trails[currentTrail].fillAmount += 0.001f;
-        yield return new WaitForSeconds(unfillingTime);
+        yield return new WaitForSeconds(0.0001f);
         if (trails[currentTrail].fillAmount == 1)
         {
             if(currentTrail < trails.Count-1)
@@ -137,8 +131,8 @@ public class RunnerController : MonoBehaviour
     protected IEnumerator TimeSubstraction()
     {
         canSubstractTime = false;
-        yield return new WaitForSeconds(0.0001f);
-        timeLeftBar.fillAmount -= 0.0005f;
+        yield return new WaitForSeconds(0.00001f);
+        timeLeftBar.fillAmount -= unfillingTime;
         if (timeLeftBar.fillAmount == 0)
         {
             GameOver();

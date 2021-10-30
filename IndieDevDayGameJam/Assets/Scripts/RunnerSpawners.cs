@@ -96,7 +96,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.5f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = 0.005f;
+            runnerController.unfillingTime = 0.001f;
             break;
         case Level.FindGapNormal:
             DifficultyLevel findGapNormal = new DifficultyLevel();
@@ -105,7 +105,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.4f;
             runnerController.spawnRate = 4;
-            runnerController.unfillingTime = 0.004f;
+            runnerController.unfillingTime = 0.0008f;
             break;
         case Level.FindGapHard:
             DifficultyLevel findGapHard = new DifficultyLevel();
@@ -114,7 +114,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.5f;
             runnerController.spawnRate = 5;
-            runnerController.unfillingTime = 0.003f;
+            runnerController.unfillingTime = 0.0007f;
             break;
         case Level.FindGapNightmare:
             DifficultyLevel findGapNightmare = new DifficultyLevel();
@@ -123,7 +123,7 @@ public class RunnerSpawners : MonoBehaviour
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
             runnerController.spawnCooldown = 1.3f;
             runnerController.spawnRate = 6;
-            runnerController.unfillingTime = 0.002f;
+            runnerController.unfillingTime = 0.0006f;
             break;
         }
     }

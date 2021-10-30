@@ -1622,7 +1622,7 @@ MonoBehaviour:
   rounds: 0
   runnerController: {fileID: 1719079317}
   freeSpaces: 0
-  level: 0
+  level: 7
 --- !u!1 &1034338341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,11 +2388,6 @@ MonoBehaviour:
   - {fileID: 1348670499}
   currentTrail: 0
   unfillingTime: 0.001
-  superslow: 0.00001
-  slow: 0.00005
-  normal: 0.0001
-  fast: 0.0005
-  superfast: 0.001
   nextScene: MainMenu
 --- !u!4 &1719079318
 Transform:

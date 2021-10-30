@@ -2332,7 +2332,7 @@ MonoBehaviour:
   rightButton: {fileID: 0}
   playerRotationVelocity: 2.5
   spawnCooldown: 1
-  spawnRate: 3
+  spawnRate: 6
   currentTime: 0
   timeLeftBar: {fileID: 1503961956}
   pointsText: {fileID: 777224656}

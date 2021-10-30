@@ -32,12 +32,22 @@ public class RunnerController : MonoBehaviour
     private bool canSubstractTime = true;
     private bool canAdvanceInTrail = true;
 
+    public float unfillingTime = 0.001f;
+
+    public float superslow = 0.00001f;
+    public float slow = 0.00005f;
+    public float normal = 0.0001f;
+    public float fast = 0.0005f;
+    public float superfast = 0.001f;
+
+    public string nextScene;
+
     private void Start()
     {
         Time.timeScale = 1;
         gameOverPanel.SetActive(false);
         rushModeGameObject.SetActive(false);
-        StartCoroutine(AddGameVelocity());
+        //StartCoroutine(AddGameVelocity());
         livesText.text = runnerPlayer.lives.ToString();
         timeLeftBar.fillAmount = 1;
     }
@@ -46,7 +56,7 @@ public class RunnerController : MonoBehaviour
     {
         canAdvanceInTrail = false;
         trails[currentTrail].fillAmount += 0.001f;
-        yield return new WaitForSeconds(0.0001f);
+        yield return new WaitForSeconds(unfillingTime);
         if (trails[currentTrail].fillAmount == 1)
         {
             if(currentTrail < trails.Count-1)
@@ -67,6 +77,15 @@ public class RunnerController : MonoBehaviour
         spawners.enabled = false;
         runnerPlayer.canControlPlayer = false;
         runnerPlayer.rb.AddForce(Vector3.forward * 4 * Time.deltaTime, ForceMode.Impulse);
+        StartCoroutine(WinNextScreen());
+    }
+
+    protected IEnumerator WinNextScreen()
+    {
+        yield return new WaitForSeconds(5);
+        //Fade screen
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 
     protected IEnumerator AddGameVelocity()

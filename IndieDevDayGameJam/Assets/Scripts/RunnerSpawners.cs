@@ -32,7 +32,11 @@ public class RunnerSpawners : MonoBehaviour
         Easy,
         Normal,
         Hard,
-        Nightmare
+        Nightmare,
+        FindGapEasy,
+        FindGapNormal,
+        FindGapHard,
+        FindGapNightmare,
     }
 
     private void Start()
@@ -48,43 +52,73 @@ public class RunnerSpawners : MonoBehaviour
             DifficultyLevel easy = new DifficultyLevel();
             easy.enemiesVelocity = 3;
             enemiesVelocity = easy.enemiesVelocity;
-            runnerController.playerRotationVelocity = easy.playerRotationVelocity;
-            easy.freeSpaces = 7;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
-            freeSpaces = easy.freeSpaces;
             runnerController.spawnCooldown = 1.5f;
+            runnerController.spawnRate = 4;
+            runnerController.unfillingTime = runnerController.normal;
             break;
         case Level.Normal:
             DifficultyLevel normal = new DifficultyLevel();
             normal.enemiesVelocity = 3.8f;
             enemiesVelocity = normal.enemiesVelocity;
-            runnerController.playerRotationVelocity = normal.playerRotationVelocity;
-            normal.freeSpaces = 7;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
-            freeSpaces = normal.freeSpaces;
             runnerController.spawnCooldown = 1.2f;
+            runnerController.spawnRate = 4;
+            runnerController.unfillingTime = runnerController.normal;
             break;
         case Level.Hard:
             DifficultyLevel hard = new DifficultyLevel();
             hard.enemiesVelocity = 4.5f;
             enemiesVelocity = hard.enemiesVelocity;
-            hard.playerRotationVelocity = 0.5f;
-            runnerController.playerRotationVelocity = hard.playerRotationVelocity;
-            hard.freeSpaces = 7;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
-            freeSpaces = hard.freeSpaces;
             runnerController.spawnCooldown = 1f;
+            runnerController.spawnRate = 4;
+            runnerController.unfillingTime = runnerController.normal;
             break;
         case Level.Nightmare:
             DifficultyLevel nightmare = new DifficultyLevel();
             nightmare.enemiesVelocity = 5.5f;
             enemiesVelocity = nightmare.enemiesVelocity;
-            nightmare.playerRotationVelocity = 0.5f;
-            runnerController.playerRotationVelocity = nightmare.playerRotationVelocity;
-            nightmare.freeSpaces = 7;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
-            freeSpaces = nightmare.freeSpaces;
             runnerController.spawnCooldown = 0.5f;
+            runnerController.spawnRate = 4;
+            runnerController.unfillingTime = runnerController.normal;
+            break;
+        case Level.FindGapEasy:
+            DifficultyLevel findGapEasy = new DifficultyLevel();
+            findGapEasy.enemiesVelocity = 4;
+            enemiesVelocity = findGapEasy.enemiesVelocity;
+            runnerController.textureMapFakeVelocity.scrollSpeed = 3;
+            runnerController.spawnCooldown = 1.5f;
+            runnerController.spawnRate = 4;
+            runnerController.unfillingTime = runnerController.slow;
+            break;
+        case Level.FindGapNormal:
+            DifficultyLevel findGapNormal = new DifficultyLevel();
+            findGapNormal.enemiesVelocity = 4.3f;
+            enemiesVelocity = findGapNormal.enemiesVelocity;
+            runnerController.textureMapFakeVelocity.scrollSpeed = 3;
+            runnerController.spawnCooldown = 1.4f;
+            runnerController.spawnRate = 4;
+            runnerController.unfillingTime = runnerController.slow;
+            break;
+        case Level.FindGapHard:
+            DifficultyLevel findGapHard = new DifficultyLevel();
+            findGapHard.enemiesVelocity = 4.6f;
+            enemiesVelocity = findGapHard.enemiesVelocity;
+            runnerController.textureMapFakeVelocity.scrollSpeed = 3;
+            runnerController.spawnCooldown = 1.5f;
+            runnerController.spawnRate = 5;
+            runnerController.unfillingTime = runnerController.normal;
+            break;
+        case Level.FindGapNightmare:
+            DifficultyLevel findGapNightmare = new DifficultyLevel();
+            findGapNightmare.enemiesVelocity = 5.5f;
+            enemiesVelocity = findGapNightmare.enemiesVelocity;
+            runnerController.textureMapFakeVelocity.scrollSpeed = 3;
+            runnerController.spawnCooldown = 1.3f;
+            runnerController.spawnRate = 6;
+            runnerController.unfillingTime = runnerController.fast;
             break;
         }
     }
@@ -94,7 +128,7 @@ public class RunnerSpawners : MonoBehaviour
         randomTransforms.Clear();
         bonusTransforms.Clear();
 
-        for(int i = 0; i<spawners.Length-runnerController.spawnRate; i++) //place how many things to spawn here
+        for(int i = 0; i < runnerController.spawnRate; i++)
         {
             GetRandomInt();
         }

@@ -10,6 +10,8 @@ public class RunnerPlayer : MonoBehaviour
 
     public Rigidbody rb;
 
+    public Animator vanAnimator;
+
     public AudioSource claxonAudioSource;
 
     public PlayerState playerState = PlayerState.Idle;
@@ -40,6 +42,28 @@ public class RunnerPlayer : MonoBehaviour
         }
     }
 
+    protected void UpdateVanAnimator()
+    {
+        if(Input.GetAxis("Horizontal") > 0.15f)
+        {
+            vanAnimator.SetTrigger("left");
+            vanAnimator.ResetTrigger("right");
+            vanAnimator.ResetTrigger("idle");
+        }
+        else if (Input.GetAxis("Horizontal") < -0.15f)
+        {
+            vanAnimator.SetTrigger("right");
+            vanAnimator.ResetTrigger("left");
+            vanAnimator.ResetTrigger("idle");
+        }
+        else
+        {
+            vanAnimator.SetTrigger("idle");
+            vanAnimator.ResetTrigger("left");
+            vanAnimator.ResetTrigger("right");
+        }
+    }
+
     protected IEnumerator HitByEnemy()
     {
         if(lives != 0)
@@ -67,6 +91,7 @@ public class RunnerPlayer : MonoBehaviour
     private void Update()
     {
         CheckPlayClaxon();
+        UpdateVanAnimator();
     }
 
 }

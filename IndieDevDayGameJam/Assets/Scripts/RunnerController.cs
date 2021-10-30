@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -35,6 +36,7 @@ public class RunnerController : MonoBehaviour
     public float unfillingTime = 0.001f;
 
     public string nextScene;
+    public string nextLevelNumber;
 
     private void Start()
     {
@@ -68,10 +70,23 @@ public class RunnerController : MonoBehaviour
 
     protected void Win()
     {
+        OverwriteSavedFile();
         spawners.enabled = false;
         runnerPlayer.canControlPlayer = false;
         runnerPlayer.rb.AddForce(Vector3.forward * 4 * Time.deltaTime, ForceMode.Impulse);
         StartCoroutine(WinNextScreen());
+    }
+
+    protected void OverwriteSavedFile()
+    {
+        string savedFile = Application.persistentDataPath + "\\savedFile.txt";
+
+        using (StreamWriter sw = new StreamWriter(savedFile, true))
+        {
+            sw.Flush();
+            sw.WriteLine(nextLevelNumber);
+            sw.Close();
+        }
     }
 
     protected IEnumerator WinNextScreen()

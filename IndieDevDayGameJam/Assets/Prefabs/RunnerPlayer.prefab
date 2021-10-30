@@ -1,5 +1,88 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &201060324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 201060325}
+  - component: {fileID: 201060327}
+  - component: {fileID: 201060326}
+  m_Layer: 0
+  m_Name: FirstPersonCamera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &201060325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201060324}
+  m_LocalRotation: {x: 0.058924828, y: -0, z: -0, w: 0.99826247}
+  m_LocalPosition: {x: 0, y: 0.36, z: 1.375}
+  m_LocalScale: {x: 4.2127194, y: 4.212719, z: 4.212719}
+  m_Children: []
+  m_Father: {fileID: 2026983675308273661}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 6.7560005, y: 0, z: 0}
+--- !u!20 &201060327
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201060324}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.30718228, g: 0.45327193, b: 0.5566038, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.02
+  far clip plane: 1000
+  field of view: 88
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &201060326
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201060324}
+  m_Enabled: 1
 --- !u!1 &901351214093296710
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,9 +223,10 @@ GameObject:
   - component: {fileID: 2026983675308273662}
   - component: {fileID: 2026983675308273659}
   - component: {fileID: 2026983675308273658}
+  - component: {fileID: 1645591083441743300}
   m_Layer: 0
   m_Name: RunnerPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,6 +244,7 @@ Transform:
   m_Children:
   - {fileID: 4781223121654599101}
   - {fileID: 8852304621990901741}
+  - {fileID: 201060325}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,7 +283,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!114 &2026983675308273658
 MonoBehaviour:
@@ -220,6 +305,25 @@ MonoBehaviour:
   claxonAudioSource: {fileID: 7547641987722347235}
   playerState: 0
   canControlPlayer: 1
+--- !u!95 &1645591083441743300
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026983675308273633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6083899f6d4f192459c75de8aafc6120, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3850459116320864240
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +433,7 @@ Transform:
   m_Children:
   - {fileID: 5023480454841768786}
   m_Father: {fileID: 4781223121654599101}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &513663066408412839
 PrefabInstance:
@@ -413,6 +517,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2464876
       objectReference: {fileID: 0}
+    - target: {fileID: -3139183162520600309, guid: 42d28193df936cb4b8051dd60567e7b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2151150502277698953, guid: 42d28193df936cb4b8051dd60567e7b6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7b71201876953f46b5ed29233827d7d, type: 2}
     - target: {fileID: -1617365279978105996, guid: 42d28193df936cb4b8051dd60567e7b6,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -423,6 +537,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: van
       objectReference: {fileID: 0}
+    - target: {fileID: -760461743183220859, guid: 42d28193df936cb4b8051dd60567e7b6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7b71201876953f46b5ed29233827d7d, type: 2}
+    - target: {fileID: -113181020801827196, guid: 42d28193df936cb4b8051dd60567e7b6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bbe220536d8037f4cb3b9580cf200dca, type: 2}
+    - target: {fileID: 86612693613662485, guid: 42d28193df936cb4b8051dd60567e7b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063835366044962077, guid: 42d28193df936cb4b8051dd60567e7b6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7b71201876953f46b5ed29233827d7d, type: 2}
+    - target: {fileID: 4175593259817410184, guid: 42d28193df936cb4b8051dd60567e7b6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7b71201876953f46b5ed29233827d7d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42d28193df936cb4b8051dd60567e7b6, type: 3}
 --- !u!4 &4781223121654599101 stripped

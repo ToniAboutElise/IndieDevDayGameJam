@@ -11,6 +11,7 @@ public class RunnerPlayer : MonoBehaviour
     public Rigidbody rb;
 
     public Animator vanAnimator;
+    public Animator hitAnimator;
 
     public AudioSource claxonAudioSource;
 
@@ -68,7 +69,10 @@ public class RunnerPlayer : MonoBehaviour
 
     protected IEnumerator HitByEnemy()
     {
-        if(lives != 0)
+        hitAnimator.SetTrigger("Hit");
+        yield return null;
+        hitAnimator.ResetTrigger("Hit");
+        if (lives != 0)
         {
             controller.timeLeftBar.fillAmount -= 0.1f;
             yield return new WaitForSeconds(2);

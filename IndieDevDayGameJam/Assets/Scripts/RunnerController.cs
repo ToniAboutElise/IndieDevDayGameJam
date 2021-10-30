@@ -24,7 +24,12 @@ public class RunnerController : MonoBehaviour
     public Text livesText;
     public TextureMapFakeVelocity textureMapFakeVelocity;
 
+    public List<Image> trails = new List<Image>();
+    public List<Image> checkPoint = new List<Image>();
+    public int currentTrail = 0;
+
     private bool canSubstractTime = true;
+    private bool canAdvanceInTrail = true;
 
     private void Start()
     {
@@ -34,6 +39,31 @@ public class RunnerController : MonoBehaviour
         StartCoroutine(AddGameVelocity());
         livesText.text = runnerPlayer.lives.ToString();
         timeLeftBar.fillAmount = 1;
+    }
+
+    protected IEnumerator AdvanceInTrail()
+    {
+        canAdvanceInTrail = false;
+        trails[currentTrail].fillAmount += 0.001f;
+        yield return new WaitForSeconds(0.0001f);
+        if (trails[currentTrail].fillAmount == 1)
+        {
+            if(currentTrail < trails.Count-1)
+            {
+                //checkPoint[currentTrail].gameObject.GetComponent<Animation>().Play();
+                currentTrail++;
+            }
+            else
+            {
+                Win();
+            }
+        }
+        canAdvanceInTrail = true;
+    }
+
+    protected void Win()
+    {
+
     }
 
     protected IEnumerator AddGameVelocity()
@@ -92,7 +122,7 @@ public class RunnerController : MonoBehaviour
     {
         canSubstractTime = false;
         yield return new WaitForSeconds(0.0001f);
-        timeLeftBar.fillAmount -= 0.001f;
+        timeLeftBar.fillAmount -= 0.0005f;
         if (timeLeftBar.fillAmount == 0)
         {
             GameOver();
@@ -132,6 +162,9 @@ public class RunnerController : MonoBehaviour
 
         if(canSubstractTime == true)
         StartCoroutine(TimeSubstraction());
+
+        if(canAdvanceInTrail == true)
+        StartCoroutine(AdvanceInTrail());
     }
 }
 

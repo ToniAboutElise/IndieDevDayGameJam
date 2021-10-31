@@ -26,6 +26,8 @@ public class RunnerController : MonoBehaviour
     public Text livesText;
     public TextureMapFakeVelocity textureMapFakeVelocity;
 
+    public GameObject completedMessage;
+
     public List<Image> trails = new List<Image>();
     public List<Image> checkPoint = new List<Image>();
     public int currentTrail = 0;
@@ -76,7 +78,7 @@ public class RunnerController : MonoBehaviour
         canControlPlayer = false;
         runnerPlayer.playerState = RunnerPlayer.PlayerState.Invincible;
         runnerPlayer.rb.AddForce(Vector3.forward * 4 * Time.deltaTime, ForceMode.Impulse);
-        StartCoroutine(WinNextScreen());
+        StartCoroutine(WinShowUI());
     }
 
     protected void OverwriteSavedFile()
@@ -91,12 +93,10 @@ public class RunnerController : MonoBehaviour
         }
     }
 
-    protected IEnumerator WinNextScreen()
+    protected IEnumerator WinShowUI()
     {
-        yield return new WaitForSeconds(5);
-        //Fade screen
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+        yield return new WaitForSeconds(4);
+        completedMessage.SetActive(true);
     }
 
     protected IEnumerator AddGameVelocity()
@@ -138,6 +138,11 @@ public class RunnerController : MonoBehaviour
         {
             runnerPlayer.rb.AddForce(new Vector3(Input.GetAxis("Horizontal") * 1.7f, 0, 0), ForceMode.Force);
         }
+    }
+
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
     public void UpdateTimeLeft(int pointsToAdd)

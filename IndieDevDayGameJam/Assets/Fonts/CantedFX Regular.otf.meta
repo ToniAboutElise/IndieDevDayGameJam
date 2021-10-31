@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8c74291cc5a1afd4bbaadd44b5876f2f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Canted FX
+  fontNames:
+  - Canted FX
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 66952ed046c73614b9b50941c5fc37ba, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

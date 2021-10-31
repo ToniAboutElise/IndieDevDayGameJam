@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelButton : MonoBehaviour
 {
     public GameObject textGameObject;
+    public GameObject completedIndicator;
+    public GameObject uncompletedIndicator;
 
     public void LoadScene(string scene)
     {

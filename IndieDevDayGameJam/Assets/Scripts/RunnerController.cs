@@ -32,6 +32,7 @@ public class RunnerController : MonoBehaviour
 
     private bool canSubstractTime = true;
     private bool canAdvanceInTrail = true;
+    public bool canControlPlayer = true;
 
     public float unfillingTime = 0.001f;
 
@@ -72,7 +73,8 @@ public class RunnerController : MonoBehaviour
     {
         OverwriteSavedFile();
         spawners.enabled = false;
-        runnerPlayer.canControlPlayer = false;
+        canControlPlayer = false;
+        runnerPlayer.boxCollider.enabled = false;
         runnerPlayer.rb.AddForce(Vector3.forward * 4 * Time.deltaTime, ForceMode.Impulse);
         StartCoroutine(WinNextScreen());
     }
@@ -183,9 +185,10 @@ public class RunnerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(canControlPlayer == true)
         PlayerControl();
 
-        if(canSubstractTime == true)
+        if(canSubstractTime == true && canControlPlayer == true)
         StartCoroutine(TimeSubstraction());
 
         if(canAdvanceInTrail == true)

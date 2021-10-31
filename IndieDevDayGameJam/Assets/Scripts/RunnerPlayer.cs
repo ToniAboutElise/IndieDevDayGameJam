@@ -18,8 +18,6 @@ public class RunnerPlayer : MonoBehaviour
 
     public PlayerState playerState = PlayerState.Idle;
 
-    public bool canControlPlayer = true;
-
     public enum PlayerState
     {
         Idle,
@@ -98,11 +96,8 @@ public class RunnerPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (canControlPlayer == true)
-        { 
-            CheckPlayClaxon();
-            UpdateVanAnimator();
-        }
+        CheckPlayClaxon();
+        UpdateVanAnimator();
     }
 
 }

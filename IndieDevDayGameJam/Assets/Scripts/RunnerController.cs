@@ -72,7 +72,7 @@ public class RunnerController : MonoBehaviour
 
     protected void CheckPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
         {
             pauseMenu.SetActive(true);
             Time.timeScale = 0;

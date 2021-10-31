@@ -74,7 +74,7 @@ public class RunnerController : MonoBehaviour
         OverwriteSavedFile();
         spawners.enabled = false;
         canControlPlayer = false;
-        runnerPlayer.boxCollider.enabled = false;
+        runnerPlayer.playerState = RunnerPlayer.PlayerState.Invincible;
         runnerPlayer.rb.AddForce(Vector3.forward * 4 * Time.deltaTime, ForceMode.Impulse);
         StartCoroutine(WinNextScreen());
     }

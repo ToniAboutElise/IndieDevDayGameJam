@@ -5,6 +5,7 @@ using UnityEngine;
 public class TextureMapFakeVelocity : MonoBehaviour
 {
     public float scrollSpeed = 0.5F;
+    public float scrollSpeedHorizontal = 0.0f;
     public Renderer rend;
     void Start()
     {
@@ -13,6 +14,7 @@ public class TextureMapFakeVelocity : MonoBehaviour
     void Update()
     {
         float offset = Time.time * scrollSpeed;
-        rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
+        float offsetHorizontal = Time.time * scrollSpeedHorizontal;
+        rend.material.SetTextureOffset("_MainTex", new Vector2(offsetHorizontal, offset));
     }
 }

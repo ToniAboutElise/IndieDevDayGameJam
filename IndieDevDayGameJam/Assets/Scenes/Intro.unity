@@ -723,10 +723,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ce544b64d53e10c4987ba309d087272e, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.324
-  m_Pitch: 1
+  m_audioClip: {fileID: 8300000, guid: 3db33b8df631f9e4d88c79a12a094cfa, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.157
+  m_Pitch: 0.44
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1065,6 +1065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introText: {fileID: 1587050289}
   buttonStart: {fileID: 2130908716}
+  beepAudioSource: {fileID: 6475451410189609496}
 --- !u!224 &7932597389228940135
 RectTransform:
   m_ObjectHideFlags: 0

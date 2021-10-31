@@ -430,11 +430,10 @@ MonoBehaviour:
   lives: 3
   rb: {fileID: 2026983675308273659}
   vanAnimator: {fileID: 3229172026666115271}
-  hitAnimator: {fileID: 0}
+  hitAnimator: {fileID: 1645591083441743300}
   claxonAudioSource: {fileID: 7547641987722347235}
   hitAudioSource: {fileID: 2529861974107307640}
   playerState: 0
-  canControlPlayer: 1
 --- !u!95 &1645591083441743300
 Animator:
   serializedVersion: 3

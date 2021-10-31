@@ -36,6 +36,9 @@ public class RunnerController : MonoBehaviour
     private bool canAdvanceInTrail = true;
     public bool canControlPlayer = true;
     private bool playerHasWon = false;
+    private bool gameIsPaused = false;
+
+    public GameObject pauseMenu;
 
     public Animation startAnimation;
 
@@ -46,6 +49,7 @@ public class RunnerController : MonoBehaviour
 
     private void Start()
     {
+        canControlPlayer = false;
         Time.timeScale = 1;
         gameOverPanel.SetActive(false);
         rushModeGameObject.SetActive(false);
@@ -63,6 +67,22 @@ public class RunnerController : MonoBehaviour
         yield return new WaitForSeconds(startAnimation.clip.length + 0.4f);
         runnerPlayer.enabled = true;
         spawners.enabled = true;
+        canControlPlayer = true;
+    }
+
+    protected void CheckPause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void ContinuePause()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
     }
 
     protected IEnumerator AdvanceInTrail()
@@ -227,6 +247,8 @@ public class RunnerController : MonoBehaviour
         {
             Win();
         }
+
+        CheckPause();
     }
 }
 

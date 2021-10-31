@@ -2046,6 +2046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6350834263928737265, guid: 4bd0dbc0afd6c964e850a85eee134bb7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Intro
+      objectReference: {fileID: 0}
     - target: {fileID: 8134167996733812454, guid: 4bd0dbc0afd6c964e850a85eee134bb7,
         type: 3}
       propertyPath: m_AnchoredPosition.y

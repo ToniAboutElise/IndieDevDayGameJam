@@ -2251,6 +2251,12 @@ MonoBehaviour:
   scrollSpeed: 0
   scrollSpeedHorizontal: -2
   rend: {fileID: 1449441007}
+--- !u!111 &1464706325 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 751756410707568129, guid: 0850907ad67bee94d8e31f67577eef6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3992911448888670507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1503961956 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3992911449838967375, guid: 0850907ad67bee94d8e31f67577eef6d,
@@ -2527,6 +2533,7 @@ MonoBehaviour:
   - {fileID: 3992911448888670508}
   currentTrail: 0
   canControlPlayer: 1
+  startAnimation: {fileID: 1464706325}
   unfillingTime: 0.001
   nextScene: MainMenu
   nextLevelNumber: 1

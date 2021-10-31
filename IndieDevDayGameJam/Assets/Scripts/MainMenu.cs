@@ -49,6 +49,14 @@ public class MainMenu : MonoBehaviour
             for (int i = 0; i < completedLevels+1; i++)
             {
                 levelList[i].gameObject.SetActive(true);
+                if(i != completedLevels)
+                {
+                    levelList[i].completedIndicator.SetActive(true);
+                }
+                else
+                {
+                    levelList[i].uncompletedIndicator.SetActive(true);
+                }
             }
             sr.Close();
         }

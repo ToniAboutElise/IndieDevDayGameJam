@@ -35,6 +35,7 @@ public class RunnerController : MonoBehaviour
     private bool canSubstractTime = true;
     private bool canAdvanceInTrail = true;
     public bool canControlPlayer = true;
+    private bool playerHasWon = false;
 
     public float unfillingTime = 0.001f;
 
@@ -58,21 +59,31 @@ public class RunnerController : MonoBehaviour
         yield return new WaitForSeconds(0.0001f);
         if (trails[currentTrail].fillAmount == 1)
         {
-            if(currentTrail < trails.Count-1)
+            if(currentTrail < trails.Count)
             {
                 checkPoint[currentTrail].gameObject.GetComponent<Animation>().Play();
-                currentTrail++;
-            }
-            else
-            {
-                Win();
+                if (currentTrail == trails.Count - 1)
+                {
+                    canAdvanceInTrail = false;
+                    playerHasWon = true;
+                }
+                else
+                {
+                    currentTrail++;
+                }
+
             }
         }
-        canAdvanceInTrail = true;
+
+        if (playerHasWon == false)
+        { 
+            canAdvanceInTrail = true;
+        }
     }
 
     protected void Win()
     {
+        canAdvanceInTrail = false;
         OverwriteSavedFile();
         spawners.enabled = false;
         canControlPlayer = false;
@@ -198,6 +209,11 @@ public class RunnerController : MonoBehaviour
 
         if(canAdvanceInTrail == true)
         StartCoroutine(AdvanceInTrail());
+
+        if(playerHasWon == true)
+        {
+            Win();
+        }
     }
 }
 

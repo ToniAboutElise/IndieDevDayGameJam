@@ -37,6 +37,8 @@ public class RunnerController : MonoBehaviour
     public bool canControlPlayer = true;
     private bool playerHasWon = false;
 
+    public Animation startAnimation;
+
     public float unfillingTime = 0.001f;
 
     public string nextScene;
@@ -50,6 +52,17 @@ public class RunnerController : MonoBehaviour
         //StartCoroutine(AddGameVelocity());
         livesText.text = runnerPlayer.lives.ToString();
         timeLeftBar.fillAmount = 1;
+        StartCoroutine(StartCountdown());
+    }
+
+    protected IEnumerator StartCountdown()
+    {
+        runnerPlayer.enabled = false;
+        spawners.enabled = false;
+        startAnimation.Play();
+        yield return new WaitForSeconds(startAnimation.clip.length + 0.4f);
+        runnerPlayer.enabled = true;
+        spawners.enabled = true;
     }
 
     protected IEnumerator AdvanceInTrail()

@@ -50,6 +50,7 @@ public class RunnerController : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         canControlPlayer = false;
         Time.timeScale = 1;
         gameOverPanel.SetActive(false);
@@ -75,6 +76,7 @@ public class RunnerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
         {
+            Cursor.visible = true;
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
         }
@@ -82,6 +84,7 @@ public class RunnerController : MonoBehaviour
 
     public void ContinuePause()
     {
+        Cursor.visible = false;
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
@@ -140,6 +143,7 @@ public class RunnerController : MonoBehaviour
 
     protected IEnumerator WinShowUI()
     {
+        Cursor.visible = true;
         yield return new WaitForSeconds(4);
         completedMessage.SetActive(true);
     }

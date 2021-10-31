@@ -127,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 942247441512885208, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1385744806428935656, guid: f0fd0b8f7b9817446a8894c435060a77,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -182,6 +187,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1402112672050351959, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402112672050351959, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402112672050351959, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 263
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402112672050351959, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073961445843251520, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: nextLevelNumber
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3073961446366152182, guid: f0fd0b8f7b9817446a8894c435060a77,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -192,10 +222,50 @@ PrefabInstance:
       propertyPath: level
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3333118281791694492, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_Text
+      value: You completed the game!!!
+      objectReference: {fileID: 0}
     - target: {fileID: 4647266414157049510, guid: f0fd0b8f7b9817446a8894c435060a77,
         type: 3}
       propertyPath: m_Name
       value: Sunset Scene Prefab Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262115843405920951, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078471892387721041, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078471892387721041, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078471892387721041, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078471892387721041, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636900266643578994, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012503632778793229, guid: f0fd0b8f7b9817446a8894c435060a77,
+        type: 3}
+      propertyPath: m_Text
+      value: "All packages \ndelivered!!"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0fd0b8f7b9817446a8894c435060a77, type: 3}

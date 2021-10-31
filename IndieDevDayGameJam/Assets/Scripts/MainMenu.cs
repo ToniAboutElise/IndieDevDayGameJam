@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = true;
         ResetLevelList();
     }
 
@@ -37,7 +38,7 @@ public class MainMenu : MonoBehaviour
                 fs.Write(info, 0, info.Length);
             }
         }
-
+        Debug.Log(savedFile);
         using (StreamReader sr = File.OpenText(savedFile))
         {
             string content = sr.ReadLine();
@@ -65,5 +66,20 @@ public class MainMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+                string savedFile = Application.persistentDataPath + "\\savedFile.txt";
+
+                using (StreamWriter sw = new StreamWriter(savedFile, true))
+                {
+                    sw.Flush();
+                    sw.WriteLine("3");
+                    sw.Close();
+                }
+            }
     }
 }

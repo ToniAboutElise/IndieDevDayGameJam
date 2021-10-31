@@ -70,8 +70,13 @@ PrefabInstance:
     - target: {fileID: 8524987314202188456, guid: c32a90a57597b9d4f8828a8bebe11c04,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -36.999985
+      value: -36.99997
       objectReference: {fileID: 0}
+    - target: {fileID: 8524987315768132221, guid: c32a90a57597b9d4f8828a8bebe11c04,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d7385bdd97f6e5c42871eecbd9b6af7d, type: 3}
     - target: {fileID: 8524987315844116990, guid: c32a90a57597b9d4f8828a8bebe11c04,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

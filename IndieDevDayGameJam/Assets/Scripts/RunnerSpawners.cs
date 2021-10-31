@@ -103,7 +103,7 @@ public class RunnerSpawners : MonoBehaviour
             findGapNormal.enemiesVelocity = 4.3f;
             enemiesVelocity = findGapNormal.enemiesVelocity;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
-            runnerController.spawnCooldown = 1.4f;
+            runnerController.spawnCooldown = 1;
             runnerController.spawnRate = 4;
             runnerController.unfillingTime = 0.0008f;
             break;
@@ -121,8 +121,8 @@ public class RunnerSpawners : MonoBehaviour
             findGapNightmare.enemiesVelocity = 5.5f;
             enemiesVelocity = findGapNightmare.enemiesVelocity;
             runnerController.textureMapFakeVelocity.scrollSpeed = 3;
-            runnerController.spawnCooldown = 1.3f;
-            runnerController.spawnRate = 6;
+            runnerController.spawnCooldown = 1f;
+            runnerController.spawnRate = 5;
             runnerController.unfillingTime = 0.0006f;
             break;
         }

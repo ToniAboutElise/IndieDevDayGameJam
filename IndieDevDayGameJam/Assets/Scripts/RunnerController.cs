@@ -57,7 +57,7 @@ public class RunnerController : MonoBehaviour
         {
             if(currentTrail < trails.Count-1)
             {
-                //checkPoint[currentTrail].gameObject.GetComponent<Animation>().Play();
+                checkPoint[currentTrail].gameObject.GetComponent<Animation>().Play();
                 currentTrail++;
             }
             else

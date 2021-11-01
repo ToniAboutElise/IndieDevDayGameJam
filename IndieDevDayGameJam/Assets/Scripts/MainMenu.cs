@@ -36,6 +36,7 @@ public class MainMenu : MonoBehaviour
                 byte[] info = new UTF8Encoding(true).GetBytes("0");
                 // Add some information to the file.
                 fs.Write(info, 0, info.Length);
+                fs.Close();
             }
         }
         Debug.Log(savedFile);
@@ -67,19 +68,23 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
+#if UNITY_EDITOR
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-                string savedFile = Application.persistentDataPath + "\\savedFile.txt";
-
-                using (StreamWriter sw = new StreamWriter(savedFile, true))
+            if (File.Exists(savedFile))
+            {
+                File.Delete(savedFile);
+                using (FileStream fs = File.Create(savedFile))
                 {
-                    sw.Flush();
-                    sw.WriteLine("3");
-                    sw.Close();
+                    byte[] info = new UTF8Encoding(true).GetBytes("3");
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                    fs.Close();
                 }
             }
+        }
     }
+#endif
 }

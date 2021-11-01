@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -132,12 +133,16 @@ public class RunnerController : MonoBehaviour
     protected void OverwriteSavedFile()
     {
         string savedFile = Application.persistentDataPath + "\\savedFile.txt";
-
-        using (StreamWriter sw = new StreamWriter(savedFile, true))
+        if (File.Exists(savedFile))
         {
-            sw.Flush();
-            sw.WriteLine(nextLevelNumber);
-            sw.Close();
+            File.Delete(savedFile);
+            using (FileStream fs = File.Create(savedFile))
+            {
+                byte[] info = new UTF8Encoding(true).GetBytes(nextLevelNumber);
+                // Add some information to the file.
+                fs.Write(info, 0, info.Length);
+                fs.Close();
+            }
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LanguageSceneSetter : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
         FindObjectOfType<LanguageSetter>().CheckLanguage();
     }

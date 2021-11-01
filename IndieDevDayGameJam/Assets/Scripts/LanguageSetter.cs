@@ -20,7 +20,8 @@ public class LanguageSetter : MonoBehaviour
 
     public void CheckLanguage()
     {
-        FindObjectOfType<TextLanguage>().SetLanguage(language);
+        foreach (TextLanguage tl in FindObjectsOfType<TextLanguage>())
+            tl.SetLanguage(language);
     }
 
     public void SetLanguageEnglish()

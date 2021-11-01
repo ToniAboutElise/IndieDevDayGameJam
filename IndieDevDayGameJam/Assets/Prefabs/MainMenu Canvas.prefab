@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   english: Exit
-  castellano: Salir del juego
+  castellano: Salir
 --- !u!114 &8074802068572533123
 MonoBehaviour:
   m_ObjectHideFlags: 0

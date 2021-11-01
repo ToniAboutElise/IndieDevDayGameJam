@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class TextLanguage : MonoBehaviour
 {
+    [TextArea]
     public string english;
+    [TextArea]
     public string castellano;
 
     public void SetLanguage(LanguageSetter.Language language)

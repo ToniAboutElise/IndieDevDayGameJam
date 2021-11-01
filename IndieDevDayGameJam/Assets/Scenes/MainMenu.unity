@@ -373,6 +373,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 163946494112607806, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_Text
+      value: "2D art by Mireya Gim\xE9nez (@Reyallustrations, Instagram)\n\n Programming
+        by Toni Dom\xEDnguez (@AlegreDominguez, Twitter)\n\nAll music by Bensound,
+        including the following songs: \"Actionable\", \"Endless Motion\", \"Extreme
+        Action\", \"Going Higher\", \"High Octane\" and \"Punky\".  \n\nSpecial thanks
+        to the Indie Dev Day crew <3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744491220783, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744491220783, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744491220783, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744491220783, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744665199372, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744665199372, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744665199372, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702382744665199372, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5820355409801483473, guid: 3ce6b260af9e36b459b95bd942465c35,
         type: 3}
       propertyPath: m_Name
@@ -481,6 +530,26 @@ PrefabInstance:
     - target: {fileID: 5820355409801483477, guid: 3ce6b260af9e36b459b95bd942465c35,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820355410037126820, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820355410037126820, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820355410037126820, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820355410037126820, guid: 3ce6b260af9e36b459b95bd942465c35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

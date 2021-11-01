@@ -79,8 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Microwave
+  castellano: Microondas
 --- !u!114 &5478305059510641364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: No
+  castellano: No
 --- !u!114 &8005420644157929332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Rocket
+  castellano: Cohete
 --- !u!114 &3576218182723543416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Exit
+  castellano: Salir del juego
 --- !u!114 &8074802068572533123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Credits
+  castellano: "Cr\xE9ditos"
 --- !u!114 &4931077212261262082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Couch
+  castellano: "Sof\xE1"
 --- !u!1 &3653313552631577632
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Are you sure?
+  castellano: "\xBFEst\xE1s seguro?"
 --- !u!1 &3913330300103277952
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,8 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Pending deliveries
+  castellano: Entregas pendientes
 --- !u!1 &4289394864307065953
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +543,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854de225ded7daf4d8bc53726576fa9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textLanguages:
+  - {fileID: 5288451366168526186}
+  - {fileID: 7273547278728014981}
+  - {fileID: 7371170939598804324}
+  - {fileID: 4309715704926195681}
+  - {fileID: 3511587881358543572}
+  - {fileID: 7746204091543073346}
+  - {fileID: 8005420644157929332}
+  - {fileID: 2822571522989778781}
+  - {fileID: 6700639181232887849}
+  - {fileID: 895998996128103945}
+  - {fileID: 5478305059510641364}
+  - {fileID: 6238419395527954318}
+  - {fileID: 4931077212261262082}
+  - {fileID: 8074802068572533123}
+  - {fileID: 3576218182723543416}
 --- !u!114 &895998996128103945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,8 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Yes
+  castellano: "S\xED"
 --- !u!114 &7273547278728014981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,8 +585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Books
+  castellano: Libros
 --- !u!114 &7746204091543073346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,8 +599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Sports car
+  castellano: Coche deportivo
 --- !u!1 &5820355408669355474
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,8 +678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Play
+  castellano: Jugar
 --- !u!1 &5820355409801483473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,8 +1058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: Fridge
+  castellano: Nevera
 --- !u!1 &7454410779910784291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,11 +1341,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "2D art by Mireya Gim\xE9nez\n(@Reyallustrations, Instagram)\n\nProgramming
-    by Toni Dom\xEDnguez (@AlegreDominguez, Twitter)\n\nAll music by Bensound, including
-    the following songs: \"Actionable\", \"Endless Motion\", \"Extreme Action\", \"Going
-    Higher\", \"High Octane\" and \"Punky\".\n\nSpecial thanks to all the Indie Dev
-    Day crew <3"
+  m_Text: "Arte 2D - Mireya Gim\xE9nez\n(@Reyallustrations, Instagram)\n\nProgramaci\xF3n
+    - Toni Dom\xEDnguez (@AlegreDominguez, Twitter)\n\nToda la m\xFAsica pertenece
+    a Bensound, incluyendo estas canciones: \"Actionable\", \"Endless Motion\", \"Extreme
+    Action\", \"Going Higher\", \"High Octane\" and \"Punky\".\n\nAgradecimientos
+    a la organizaci\xF3n \ndel Indie Dev Day <3"
 --- !u!114 &2822571522989778781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1342,8 +1358,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: ENGLISH
-  castellano: CATELANO
+  english: "2D art by Mireya Gim\xE9nez (@Reyallustrations, Instagram)\n\n Programming
+    by Toni Dom\xEDnguez (@AlegreDominguez, Twitter)\n\nAll music by Bensound, including
+    the following songs: \"Actionable\", \"Endless Motion\", \"Extreme Action\", \"Going
+    Higher\", \"High Octane\" and \"Punky\".  \n\nSpecial thanks to the Indie Dev
+    Day crew <3"
+  castellano: "Arte 2D - Mireya Gim\xE9nez\n(@Reyallustrations, Instagram)\n\nProgramaci\xF3n
+    - Toni Dom\xEDnguez (@AlegreDominguez, Twitter)\n\nToda la m\xFAsica pertenece
+    a Bensound, incluyendo estas canciones: \"Actionable\", \"Endless Motion\", \"Extreme
+    Action\", \"Going Higher\", \"High Octane\" and \"Punky\".\n\nAgradecimientos
+    a la organizaci\xF3n \ndel Indie Dev Day <3"
 --- !u!1 &8057176357410142450
 GameObject:
   m_ObjectHideFlags: 0

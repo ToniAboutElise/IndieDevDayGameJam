@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LanguageSceneSetter : MonoBehaviour
 {
+    public TextLanguage[] textLanguages;
+
     private void Start()
     {
-        FindObjectOfType<LanguageSetter>().CheckLanguage();
+        FindObjectOfType<LanguageSetter>().CheckLanguage(textLanguages);
     }
 }

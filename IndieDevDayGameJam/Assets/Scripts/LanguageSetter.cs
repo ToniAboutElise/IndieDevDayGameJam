@@ -18,10 +18,10 @@ public class LanguageSetter : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void CheckLanguage()
+    public void CheckLanguage(TextLanguage[] tl)
     {
-        foreach (TextLanguage tl in FindObjectsOfType<TextLanguage>())
-            tl.SetLanguage(language);
+        foreach (TextLanguage t in tl)
+            t.SetLanguage(language);
     }
 
     public void SetLanguageEnglish()

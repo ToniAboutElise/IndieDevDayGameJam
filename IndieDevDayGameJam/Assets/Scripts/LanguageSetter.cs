@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LanguageSetter : MonoBehaviour
 {
@@ -30,5 +31,10 @@ public class LanguageSetter : MonoBehaviour
     public void SetLanguageCastellano()
     {
         language = Language.Castellano;
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }

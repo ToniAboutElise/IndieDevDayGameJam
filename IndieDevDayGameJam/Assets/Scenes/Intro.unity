@@ -294,6 +294,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1464433819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464433820}
+  - component: {fileID: 1464433821}
+  m_Layer: 5
+  m_Name: LanguageSceneSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1464433820
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464433819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7932597389228940135}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1464433821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464433819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854de225ded7daf4d8bc53726576fa9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLanguages:
+  - {fileID: 1587050291}
+  - {fileID: 1623494406}
 --- !u!1 &1587050287
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +356,7 @@ GameObject:
   - component: {fileID: 1587050288}
   - component: {fileID: 1587050290}
   - component: {fileID: 1587050289}
+  - component: {fileID: 1587050291}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -373,7 +425,7 @@ MonoBehaviour:
 
     2- Avoid hitting other stuff.
 
-    3- Remember our vehicles are slippery to control.
+    3- Keep in mind our vehicles are slippery to control.
 
     4- There''s a chicken infestation, be careful.'
 --- !u!222 &1587050290
@@ -384,6 +436,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587050287}
   m_CullTransparentMesh: 0
+--- !u!114 &1587050291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587050287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  english: 'We''re the cheapest delivery company out there! But that comes with a
+    price. What a weird sentence... Whatever, our policy is simple: if the clients
+    don''t receive the package in the following 27 weeks, they get a refund. Your
+    deliveries are minutes away from getting to that time limit, so do it fast!
+
+    Remember, there are special rules when delivering packages:
+
+    1- Collect watches to get more time (it works for some reason).
+
+    2- Avoid hitting other stuff.
+
+    3- Keep in mind our vehicles are slippery to control.
+
+    4- There''s a chicken infestation, be careful.'
+  castellano: "\xA1Somos la empresa de paqueter\xEDa m\xE1s barata del planeta! Aunque
+    eso tiene un precio. Qu\xE9 frase tan rara... En fin, nuestra pol\xEDtica es simple:
+    si los clientes no reciben su paquete en un plazo de 27 semanas, no pagan el importe.
+    Tus entregas est\xE1n a punto de llegar a ese l\xEDmite \xA1date prisa!\r\nRecuerda,
+    hay reglas que seguir en las entregas:\r\n1- Colecciona relojes para ganar tiempo
+    (funciona, no s\xE9 porqu\xE9).\r\n2- Evita chocarte con obst\xE1culos.\r\n3-
+    Nuestros veh\xEDculos son resbaladizos de conducir.\r\n4- Hay una plaga de pollos,
+    ten cuidado."
 --- !u!1 &1623494402
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +481,7 @@ GameObject:
   - component: {fileID: 1623494403}
   - component: {fileID: 1623494405}
   - component: {fileID: 1623494404}
+  - component: {fileID: 1623494406}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -461,6 +548,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623494402}
   m_CullTransparentMesh: 0
+--- !u!114 &1623494406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623494402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7a43b87b7bc7c45af04029c0c5b542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  english: START
+  castellano: VAMOS
 --- !u!1 &2130908716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1183,7 @@ RectTransform:
   - {fileID: 7932597388583219616}
   - {fileID: 7932597388251059525}
   - {fileID: 8985938633734010849}
+  - {fileID: 1464433820}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

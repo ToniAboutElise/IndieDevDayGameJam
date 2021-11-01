@@ -238,6 +238,7 @@ public class RunnerController : MonoBehaviour
 
     public void GameOver()
     {
+        Cursor.visible = true;
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
     }
